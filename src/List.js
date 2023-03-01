@@ -1,4 +1,30 @@
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
+const initial_list = [
+    {
+        id: 'a',
+        name: 'An item',
+    },
+    {
+        id: 'b',
+        name: 'A second item',
+    },
+];
+
 function List() {
+    const [list, setList] = React.useState(initial_list);
+    const [name, setName] = React.useState('');
+
+    function handleChange(event) {
+        setName(event.target.value);
+    }
+
+    function handleAdd() {
+        const newList = list.concat({ name, id: uuidv4() });
+        setList(newList);
+        setName('');
+    }
     return (
         <body>
             <div id="content">
@@ -8,9 +34,9 @@ function List() {
                             <h4>Your papercuts</h4>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">An item</li>
-                            <li class="list-group-item">A second item</li>
-                            <li class="list-group-item">A third item</li>
+                            {list.map((item) => (
+                                <li class="list-group-item" key={item.id}>{item.name}</li>
+                            ))}
                         </ul>
                     </div>
                 </section>
@@ -18,8 +44,8 @@ function List() {
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Track a papercut</h5>
-                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" />
-                            <button type="button" class="btn btn-outline-success" id="submit-button">Submit</button>
+                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} />
+                            <button type="button" class="btn btn-outline-success" id="submit-button" onClick={handleAdd}>Submit</button>
                         </div>
                     </div>
                 </section>
