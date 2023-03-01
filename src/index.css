@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right top, #bad6ff, #a8e7ff, #aef3f1, #cbfbdf, #f2ffd4);
+}
+
+#content {
+  height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* NAV */
+
+nav {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.navbar-brand {
+  margin: 0 15%;
+}
+
+section {
+  margin: 5% 15%;
+}
+
+/* CARD */
+
+.card {
+}
+
+#submit-button {
+  margin: 10px 0;
+}
+
+/* QUOTE OF THE DAY */
+
+#quote-of-the-day {
+  margin: auto;
+  max-width: 500px;
+  margin-bottom: 5%;
+}
+
+/* FOOTER */
+
+footer a {
+  text-decoration: none;
+}
+
+#copyright {
+  margin-bottom: 0;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#footer-contacts {
+  background-color: lightgray;
+  text-align: center;
+  padding: 1%;
+}
