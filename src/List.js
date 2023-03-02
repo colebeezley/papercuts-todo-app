@@ -27,9 +27,11 @@ function List() {
         setName('');
     }
 
-    function handleRemove() {
-        // remove item
-    }
+    function handleRemove(id) {
+        const newList = list.filter((item) => item.id !== id);
+    
+        setList(newList);
+      }
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -48,7 +50,7 @@ function List() {
                         <ul class="list-group list-group-flush">
                             {list.map((item) => (
                                 <li class="list-group-item" key={item.id}><p class="papercut-item">{item.name}</p>
-                                    <button type="button" class="btn btn-outline-danger button-remove" onClick={handleRemove}>
+                                    <button type="button" class="btn btn-outline-danger button-remove" onClick={() => handleRemove(item.id)}>
                                         Remove
                                     </button>
                                 </li>
