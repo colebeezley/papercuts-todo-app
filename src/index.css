@@ -42,6 +42,18 @@ section {
   margin: 10px 0;
 }
 
+li {
+}
+
+li .button-remove {
+  float: right;
+}
+
+.papercut-item {
+  display: inline-block;
+  text-align: left;
+}
+
 /* QUOTE OF THE DAY */
 
 #quote-of-the-day {

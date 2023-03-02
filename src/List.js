@@ -28,13 +28,13 @@ function List() {
     }
 
     function handleRemove() {
-        
+        // remove item
     }
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Enter') {
-        handleAdd()
-      }
+        if (event.key === 'Enter') {
+            handleAdd()
+        }
     };
 
     return (
@@ -47,7 +47,11 @@ function List() {
                         </div>
                         <ul class="list-group list-group-flush">
                             {list.map((item) => (
-                                <li class="list-group-item" key={item.id}>{item.name}</li>
+                                <li class="list-group-item" key={item.id}><p class="papercut-item">{item.name}</p>
+                                    <button type="button" class="btn btn-outline-danger button-remove" onClick={handleRemove}>
+                                        Remove
+                                    </button>
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -56,14 +60,14 @@ function List() {
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Track a papercut</h5>
-                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} onKeyDown={handleKeyDown}/>
+                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} onKeyDown={handleKeyDown} />
                             <button type="button" class="btn btn-outline-success" id="submit-button" onClick={handleAdd}>Submit</button>
                         </div>
                     </div>
                 </section>
-            </div>
-            <Quote/>
-        </body>
+            </div >
+            <Quote />
+        </body >
     )
 }
 
