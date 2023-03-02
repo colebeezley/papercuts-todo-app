@@ -25,6 +25,13 @@ function List() {
         setList(newList);
         setName('');
     }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter') {
+        handleAdd()
+      }
+    };
+
     return (
         <body>
             <div id="content">
@@ -44,7 +51,7 @@ function List() {
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Track a papercut</h5>
-                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} />
+                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} onKeyDown={handleKeyDown}/>
                             <button type="button" class="btn btn-outline-success" id="submit-button" onClick={handleAdd}>Submit</button>
                         </div>
                     </div>
