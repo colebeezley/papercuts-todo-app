@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Quote from "./Quote"
 
 const initial_list = [
     {
@@ -24,6 +25,10 @@ function List() {
         const newList = list.concat({ name, id: uuidv4() });
         setList(newList);
         setName('');
+    }
+
+    function handleRemove() {
+        
     }
 
     const handleKeyDown = (event) => {
@@ -57,6 +62,7 @@ function List() {
                     </div>
                 </section>
             </div>
+            <Quote/>
         </body>
     )
 }
