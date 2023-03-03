@@ -3,7 +3,7 @@
 function Nav() {
     return (
         <nav class="navbar navbar-dark bg-dark navbar-expand-md">
-            <a href="#" class="navbar-brand">paper/cut</a>
+            <a href="#" class="navbar-brand">paper/cuts</a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
