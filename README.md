@@ -1,5 +1,9 @@
 # Introduction
 
+paper/cuts is a simple motivational TODO website. It's currently a WIP, but it's live at [papercuts.cloud](https://papercuts.cloud) for anyone looking for a preview.
+
+<img width="1383" alt="chrome_2023-03-02_20-44-28" src="https://user-images.githubusercontent.com/62979419/222633408-8c2b924b-24b4-4311-b55b-9f35a1638dc4.png">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 It's also using Bootstrap 5.
 
