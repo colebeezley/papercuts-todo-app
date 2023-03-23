@@ -11,11 +11,14 @@ const initial_list = [
         id: 'b',
         name: 'A second item',
     },
+    // object format
 ];
 
 function List() {
     const [list, setList] = React.useState(initial_list);
     const [name, setName] = React.useState('');
+    // initialize hooks for list and names
+    // we'll update the list each time we add a name
 
     function handleChange(event) {
         setName(event.target.value);
@@ -25,11 +28,11 @@ function List() {
         const newList = list.concat({ name, id: uuidv4() });
         setList(newList);
         setName('');
+        // set list to new list, update name
     }
 
     function handleRemove(id) {
         const newList = list.filter((item) => item.id !== id);
-    
         setList(newList);
       }
 
