@@ -16,7 +16,6 @@ function About() {
                     </div>
                 </div>
 
-
                 <div className="card" id="about-card">
                     <div className="card-body">
                         <h5 className="card-title">Contact</h5>

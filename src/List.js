@@ -8,10 +8,12 @@ if (initial_list == null){
             {
                 id: 'a',
                 name: 'An item',
+                star: true
             },
             {
                 id: 'b',
                 name: 'A second item',
+                star: false
             },
             // object format
         ];
@@ -27,8 +29,21 @@ function List() {
         setName(event.target.value);
     }
 
+    function handleFavorite(id){
+        let newList = list.map((item) => {
+            if (item.id !== id){
+                return item
+            } else {
+                item.star = !item.star // we're just changing the enabled status of the star
+                return item
+            }
+        })
+        setList(newList)
+        localStorage.setItem('ourList', JSON.stringify(newList))
+    }
+
     function handleAdd() {
-        const newList = list.concat({ name, id: uuidv4() });
+        const newList = list.concat({ name, id: uuidv4(), star: null });
         setList(newList);
         setName('');
         // set list to new list, update name
@@ -47,6 +62,7 @@ function List() {
         }
     };
 
+
     return (
         <div>
             <div id="content">
@@ -60,6 +76,9 @@ function List() {
                                 <li className="list-group-item" key={item.id}><p className="papercut-item">{item.name}</p>
                                     <button type="button" className="btn btn-outline-danger button-remove" onClick={() => handleRemove(item.id)}>
                                         Remove
+                                    </button>
+                                    <button type="button" className="btn btn-outline-warning button-favorite" onClick={() => handleFavorite(item.id)}>
+                                        ☆
                                     </button>
                                 </li>
                             ))}

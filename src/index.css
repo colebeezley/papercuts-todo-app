@@ -49,6 +49,11 @@ li .button-remove {
   float: right;
 }
 
+li .button-favorite {
+  float: right;
+  margin-right: 1em
+}
+
 .papercut-item {
   display: inline-block;
   text-align: left;
