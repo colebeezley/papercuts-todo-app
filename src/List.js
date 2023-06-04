@@ -2,17 +2,19 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Quote from "./Quote"
 
-const initial_list = [
-    {
-        id: 'a',
-        name: 'An item',
-    },
-    {
-        id: 'b',
-        name: 'A second item',
-    },
-    // object format
-];
+// const initial_list = [
+//     {
+//         id: 'a',
+//         name: 'An item',
+//     },
+//     {
+//         id: 'b',
+//         name: 'A second item',
+//     },
+//     // object format
+// ];
+
+const initial_list = JSON.parse(localStorage.getItem('ourList'))
 
 function List() {
     const [list, setList] = React.useState(initial_list);
@@ -29,12 +31,14 @@ function List() {
         setList(newList);
         setName('');
         // set list to new list, update name
+        localStorage.setItem('ourList', JSON.stringify(newList))
     }
 
     function handleRemove(id) {
         const newList = list.filter((item) => item.id !== id);
         setList(newList);
-      }
+        localStorage.setItem('ourList', JSON.stringify(newList))
+    }
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
@@ -43,17 +47,17 @@ function List() {
     };
 
     return (
-        <body>
+        <div>
             <div id="content">
-                <section class="papercuts-list">
-                    <div class="card">
-                        <div class="card-header">
+                <section className="papercuts-list">
+                    <div className="card">
+                        <div className="card-header">
                             <h4>Your papercuts</h4>
                         </div>
-                        <ul class="list-group list-group-flush">
+                        <ul className="list-group list-group-flush">
                             {list.map((item) => (
-                                <li class="list-group-item" key={item.id}><p class="papercut-item">{item.name}</p>
-                                    <button type="button" class="btn btn-outline-danger button-remove" onClick={() => handleRemove(item.id)}>
+                                <li className="list-group-item" key={item.id}><p className="papercut-item">{item.name}</p>
+                                    <button type="button" className="btn btn-outline-danger button-remove" onClick={() => handleRemove(item.id)}>
                                         Remove
                                     </button>
                                 </li>
@@ -61,18 +65,18 @@ function List() {
                         </ul>
                     </div>
                 </section>
-                <section class="papercuts-submission">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Track a papercut</h5>
-                            <input type="text" id="papercut-message" class="form-control" placeholder="What's on your mind?" autocomplete="off" value={name} onChange={handleChange} onKeyDown={handleKeyDown} />
-                            <button type="button" class="btn btn-outline-success" id="submit-button" onClick={handleAdd}>Submit</button>
+                <section className="papercuts-submission">
+                    <div className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">Track a papercut</h5>
+                            <input type="text" id="papercut-message" className="form-control" placeholder="What's on your mind?" autoComplete="off" value={name} onChange={handleChange} onKeyDown={handleKeyDown} />
+                            <button type="button" className="btn btn-outline-success" id="submit-button" onClick={handleAdd}>Submit</button>
                         </div>
                     </div>
                 </section>
             </div >
             <Quote />
-        </body >
+        </div>
     )
 }
 

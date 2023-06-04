@@ -19,20 +19,20 @@ function Quote() {
     return (
         <footer>
             <div id="quote-of-the-day">
-                <div class="card">
-                    <div class="card-header">
+                <div className="card">
+                    <div className="card-header">
                         Quote of the day
                     </div>
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
+                    <div className="card-body">
+                        <blockquote className="blockquote mb-0">
                             <p>{quote}</p>
-                            <footer class="blockquote-footer">{author}<cite title="Source Title"></cite></footer>
+                            <footer className="blockquote-footer">{author}<cite title="Source Title"></cite></footer>
                         </blockquote>
                     </div>
                 </div>
             </div>
-            <div id="footer-contacts" class="bg-dark">
-                <a class="link-primary" href="http://colebeezley.com" target="_blank" rel="noreferrer">colebeezley.com</a>
+            <div id="footer-contacts" className="bg-dark">
+                <a className="link-primary" href="http://colebeezley.com" target="_blank" rel="noreferrer">colebeezley.com</a>
                 <p id="copyright">
                     © 2023 Cole Beezley
                 </p>
