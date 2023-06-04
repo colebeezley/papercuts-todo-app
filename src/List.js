@@ -2,19 +2,20 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Quote from "./Quote"
 
-// const initial_list = [
-//     {
-//         id: 'a',
-//         name: 'An item',
-//     },
-//     {
-//         id: 'b',
-//         name: 'A second item',
-//     },
-//     // object format
-// ];
-
-const initial_list = JSON.parse(localStorage.getItem('ourList'))
+let initial_list = JSON.parse(localStorage.getItem('ourList'))
+if (initial_list == null){
+    initial_list = [
+            {
+                id: 'a',
+                name: 'An item',
+            },
+            {
+                id: 'b',
+                name: 'A second item',
+            },
+            // object format
+        ];
+}
 
 function List() {
     const [list, setList] = React.useState(initial_list);

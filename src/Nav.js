@@ -9,7 +9,8 @@ function Nav() {
             </button>
             <div className="navbar-collapse collapse" id="navbar">
                 <ul className="navbar-nav">
-                    <li className="nav-item"><a href="/" className="nav-link">Home</a></li>
+                    <li className="nav-item"><a href="/" className="nav-link">View list</a></li>
+                    {/* <li className="nav-item"><a href="/timetracker" className="nav-link">TimeTracker</a></li> */}
                     <li className="nav-item"><a href="about" className="nav-link">About</a></li>
                     {/* <li class="nav-item"><a href="contact" class="nav-link">Contact</a></li> */}
                 </ul>
